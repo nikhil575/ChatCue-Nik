@@ -45,7 +45,7 @@ export const StreamSimulator: React.FC = () => {
           The Real ChatCue Streamer Cockpit
         </h2>
         <p className="mt-4 text-base sm:text-lg text-neutral-400 max-w-2xl mx-auto">
-          Built for high-velocity global streams. Watch incoming Spanish, English, Portuguese, Hinglish, and regional slang get parsed into clear priorities in real time.
+          Built for high-velocity global streams across YouTube, Kick & Twitch. Watch incoming Spanish, English, Portuguese, Hinglish, and regional slang get parsed into clear priorities in real time.
         </p>
       </div>
 

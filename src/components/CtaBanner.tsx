@@ -20,7 +20,7 @@ export const CtaBanner: React.FC = () => {
           </h2>
 
           <p className="text-base sm:text-lg text-neutral-300 max-w-xl mx-auto">
-            Stop losing donations in the scroll. Join Kick and YouTube streamers who answer top questions in seconds and keep viewers hooked.
+            Stop losing donations in the scroll. Join YouTube, Kick, and Twitch streamers who answer top questions in seconds and keep viewers hooked.
           </p>
 
           <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -44,7 +44,7 @@ export const CtaBanner: React.FC = () => {
             <span aria-hidden="true" className="text-neutral-700">·</span>
             <div className="flex items-center gap-1.5">
               <Sparkles className="w-4 h-4 text-[#53FC18]" />
-              <span>Works with YouTube & Kick</span>
+              <span>Works with YouTube, Kick & Twitch</span>
             </div>
             <span aria-hidden="true" className="text-neutral-700">·</span>
             <span>Zero API Keys</span>

@@ -117,6 +117,7 @@ export const RealDashboardView: React.FC<DashboardViewProps> = ({
     { id: 'm-1', time: '10:36 AM', author: 'fernandoGR20', text: 'xdd jajaja tremenda jugada', badge: '', repeat: 8, color: '#A78BFA' },
     { id: 'm-2', time: '10:36 AM', author: 'KS_Laure_912', text: '¿sensibilidad en dpi?', badge: 'REPEAT', repeat: 4, color: '#F472B6', isQuestion: true },
     { id: 'm-3', time: '10:36 AM', author: 'kartobar', text: 'xdd SAJ', badge: '', repeat: 1, color: '#38BDF8' },
+    { id: 'm-3b', time: '10:35 AM', author: 'TwitchRider_77', text: 'Cheered 500 bits: Next level tournament clutch!', badge: 'SUPER CHAT', repeat: 1, color: '#A970FF', isSuper: true },
     { id: 'm-4', time: '10:35 AM', author: 'Aarav_YT', text: 'Super Chat $20.00: Bhai next level clutch!', badge: 'SUPER CHAT', repeat: 1, color: '#FBBF24', isSuper: true },
     { id: 'm-5', time: '10:35 AM', author: 'nestor3359', text: 'te va conseguir guacha', badge: '', repeat: 1, color: '#34D399' },
     { id: 'm-6', time: '10:35 AM', author: 'Zirenx', text: 'un furryfacto SAJ', badge: '', repeat: 1, color: '#818CF8' },
@@ -326,7 +327,7 @@ export const RealDashboardView: React.FC<DashboardViewProps> = ({
         <div className="flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-[#53FC18]" />
           <span>
-            Connected to <strong>Kick & YouTube live chat tabs</strong>. Real-time global AI multi-language clustering active.
+            Connected to <strong>YouTube, Kick & Twitch live chat tabs</strong>. Real-time global AI multi-language clustering active.
           </span>
         </div>
         <div className="flex items-center gap-1.5 text-[11px] text-neutral-400 hidden sm:flex font-mono">
@@ -523,7 +524,7 @@ export const RealDashboardView: React.FC<DashboardViewProps> = ({
 
           {/* Quick status bar at bottom of center feed */}
           <div className="px-3 py-2 border-t border-neutral-800 bg-[#050C07] flex items-center justify-between text-[11px] text-neutral-400">
-            <span>Showing live stream chat (YouTube & Kick)</span>
+            <span>Showing live stream chat (YouTube, Kick & Twitch)</span>
             <span className="text-[#53FC18] font-mono">Real-time sync</span>
           </div>
         </div>

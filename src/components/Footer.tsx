@@ -11,7 +11,7 @@ export const Footer: React.FC = () => {
         <div className="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
           <ChatCueLogo size="md" />
           <span className="text-xs text-neutral-400">
-            Live chat dashboard & cue engine for YouTube & Kick streamers.
+            Live chat dashboard & cue engine for YouTube, Kick & Twitch streamers.
           </span>
         </div>
 
@@ -46,7 +46,7 @@ export const Footer: React.FC = () => {
           © {new Date().getFullYear()} ChatCue. All rights reserved. Built for creators.
         </div>
         <div className="text-[11px] text-neutral-400">
-          YouTube and Kick are registered trademarks of their respective owners. ChatCue is an independent extension.
+          YouTube, Kick, and Twitch are registered trademarks of their respective owners. ChatCue is an independent extension.
         </div>
       </div>
     </footer>

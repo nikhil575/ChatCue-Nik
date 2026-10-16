@@ -29,7 +29,7 @@ export const BentoFeatures: React.FC = () => {
           Every Feature Mapped Directly to Your Live Broadcast
         </h2>
         <p className="mt-4 text-base sm:text-lg text-neutral-400">
-          Built to solve real streaming headaches across YouTube and Kick, in any language worldwide.
+          Built to solve real streaming headaches across YouTube, Kick, and Twitch, in any language worldwide.
         </p>
       </div>
 

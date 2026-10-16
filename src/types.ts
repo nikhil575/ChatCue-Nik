@@ -3,10 +3,10 @@ export type SupportedLanguage = 'global' | 'spanish' | 'english' | 'hinglish' | 
 export interface StreamMessage {
   id: string;
   author: string;
-  platform: 'kick' | 'youtube';
+  platform: 'kick' | 'youtube' | 'twitch';
   text: string;
   category: 'question' | 'request' | 'tip' | 'chatter' | 'toxic' | 'member';
-  badge?: 'MEMBER' | 'REPEAT' | 'VIP' | 'MOD' | 'SUPER CHAT';
+  badge?: 'MEMBER' | 'REPEAT' | 'VIP' | 'MOD' | 'SUPER CHAT' | 'SUB' | 'BITS';
   repeatCount?: number;
   tipAmount?: string;
   timestamp: string;
@@ -30,7 +30,7 @@ export interface StreamQuestion {
   repeatCount: number;
   minutesAgo: number;
   isAnswered: boolean;
-  platform: 'kick' | 'youtube';
+  platform: 'kick' | 'youtube' | 'twitch';
 }
 
 export interface ActivePerson {

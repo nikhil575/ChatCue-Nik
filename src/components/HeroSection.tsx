@@ -17,9 +17,9 @@ export const HeroSection: React.FC = () => {
           <div className="flex items-center gap-2 text-xs sm:text-sm text-neutral-400">
             <span className="font-semibold text-white">Live Stream AI Cockpit</span>
             <span aria-hidden="true">·</span>
-            <span className="text-[#53FC18] font-medium">Global Multi-Language Support</span>
+            <span className="text-[#53FC18] font-medium">YouTube, Kick & Twitch</span>
             <span aria-hidden="true">·</span>
-            <span>Kick & YouTube</span>
+            <span>Chrome Extension</span>
           </div>
 
           {/* Main Headline */}
@@ -39,22 +39,47 @@ export const HeroSection: React.FC = () => {
             transition={{ duration: 0.4, delay: 0.1 }}
             className="text-base sm:text-lg text-neutral-300 max-w-xl leading-relaxed"
           >
-            ChatCue turns chaotic live stream chats into an organized, prioritized cue cockpit. Group repeated viewer requests, catch questions in the last 3 minutes, isolate Super Chats & Kick tips, and project real-time requests onto your OBS overlay in any language worldwide.
+            ChatCue turns chaotic live stream chats into an organized, prioritized cue cockpit. Group repeated viewer requests, catch questions in the last 3 minutes, isolate Super Chats, Kick tips & Twitch bits, and project real-time requests onto your OBS overlay in any language worldwide.
           </motion.p>
 
           {/* Supported platform & global language tags */}
-          <div className="flex flex-wrap items-center gap-2 pt-1">
-            <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#0E1A11] border border-[#53FC18]/30 text-xs font-semibold text-[#53FC18]">
-              <span className="w-2 h-2 rounded-full bg-[#53FC18]" />
-              Kick Pop-outs & Channels
+          <div className="flex flex-wrap items-center gap-2.5 pt-1">
+            {/* Kick Badge with Cute Logo */}
+            <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-[#0E1A11]/90 border border-[#53FC18]/35 text-xs font-semibold text-[#53FC18] shadow-[0_0_15px_rgba(83,252,24,0.08)] hover:scale-105 transition-transform duration-200">
+              <div className="w-5 h-5 rounded-lg bg-[#53FC18]/20 border border-[#53FC18]/40 flex items-center justify-center shrink-0 shadow-sm">
+                <svg className="w-3 h-3 fill-[#53FC18]" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4 3h4.8v5.6L14 3h5.6l-6.8 7.6 7.4 10.4h-5.8l-5.6-8.2V21H4V3z"/>
+                </svg>
+              </div>
+              <span>Kick Pop-outs</span>
             </div>
-            <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#1F0E10] border border-red-500/30 text-xs font-semibold text-red-400">
-              <span className="w-2 h-2 rounded-full bg-red-500" />
-              YouTube Live Chat Pop-outs
+
+            {/* Twitch Badge with Cute Glitch Logo */}
+            <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-[#150E24]/90 border border-purple-500/35 text-xs font-semibold text-purple-300 shadow-[0_0_15px_rgba(145,70,255,0.12)] hover:scale-105 transition-transform duration-200">
+              <div className="w-5 h-5 rounded-lg bg-[#9146FF]/25 border border-purple-500/50 flex items-center justify-center shrink-0 shadow-sm">
+                <svg className="w-3.5 h-3.5 fill-[#C499FF]" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2.149 0L.537 4.11v16.143h5.373v3.747h4.032l3.763-3.747h4.301L23.463 11V0H2.149zm19.074 10.222l-2.687 2.687h-4.301l-2.687 2.687V12.91H6.985V2.149h14.238v8.073zM16.478 5.642h-2.149v5.373h2.149V5.642zm-5.373 0H8.956v5.373h2.149V5.642z"/>
+                </svg>
+              </div>
+              <span>Twitch Live Chat</span>
             </div>
-            <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-black/60 border border-neutral-800 text-xs font-medium text-neutral-300">
-              <Globe2 className="w-3.5 h-3.5 text-[#53FC18]" />
-              All Languages & Slang
+
+            {/* YouTube Badge with Cute Play Logo */}
+            <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-[#1F0E10]/90 border border-red-500/35 text-xs font-semibold text-red-400 shadow-[0_0_15px_rgba(255,0,51,0.08)] hover:scale-105 transition-transform duration-200">
+              <div className="w-5 h-5 rounded-lg bg-red-600/20 border border-red-500/40 flex items-center justify-center shrink-0 shadow-sm">
+                <svg className="w-3.5 h-3.5 fill-red-500" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                </svg>
+              </div>
+              <span>YouTube Live</span>
+            </div>
+
+            {/* Global Slang Badge with Cute Globe Logo */}
+            <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-black/70 border border-neutral-800 text-xs font-medium text-neutral-300 hover:scale-105 transition-transform duration-200">
+              <div className="w-5 h-5 rounded-lg bg-[#53FC18]/15 border border-[#53FC18]/30 flex items-center justify-center shrink-0 shadow-sm">
+                <Globe2 className="w-3.5 h-3.5 text-[#53FC18]" />
+              </div>
+              <span>Global Slang AI</span>
             </div>
           </div>
 
