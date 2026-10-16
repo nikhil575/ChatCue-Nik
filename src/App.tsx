@@ -1,11 +1,11 @@
 import React from 'react';
 import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
-import { StreamSimulator } from './components/StreamSimulator';
+import { HowItWorks } from './components/HowItWorks';
 import { BentoFeatures } from './components/BentoFeatures';
 import { ObsOverlayShowcase } from './components/ObsOverlayShowcase';
 import { ChaosComparison } from './components/ChaosComparison';
-import { CreatorTestimonials } from './components/CreatorTestimonials';
+import { FoundingStreamer } from './components/FoundingStreamer';
 import { FaqSection } from './components/FaqSection';
 import { CtaBanner } from './components/CtaBanner';
 import { Footer } from './components/Footer';
@@ -24,11 +24,11 @@ export default function App() {
         <Navbar />
         <main className="flex-1">
           <HeroSection />
-          <StreamSimulator />
+          <HowItWorks />
           <BentoFeatures />
           <ObsOverlayShowcase />
           <ChaosComparison />
-          <CreatorTestimonials />
+          <FoundingStreamer />
           <FaqSection />
           <CtaBanner />
         </main>

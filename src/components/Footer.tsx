@@ -17,8 +17,8 @@ export const Footer: React.FC = () => {
 
         {/* Links */}
         <div className="flex flex-wrap items-center justify-center gap-6 text-xs text-neutral-400 font-medium">
-          <a href="#simulator" className="hover:text-[#53FC18] transition-colors">
-            Simulator
+          <a href="#how-it-works" className="hover:text-[#53FC18] transition-colors">
+            How it works
           </a>
           <a href="#features" className="hover:text-[#53FC18] transition-colors">
             Features

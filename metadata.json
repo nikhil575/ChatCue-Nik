@@ -2,5 +2,7 @@
   "name": "ChatCue | AI Live Chat Dashboard for YouTube, Kick & Twitch",
   "description": "The smart AI live chat dashboard Chrome extension for YouTube, Kick, and Twitch streamers. Catch high-value questions, group repeated requests, filter spam, and power interactive OBS overlays in real time.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }

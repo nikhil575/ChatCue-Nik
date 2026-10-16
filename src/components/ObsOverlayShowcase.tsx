@@ -1,28 +1,47 @@
 import React, { useState } from 'react';
-import { Monitor, Copy, Check, Sparkles, Layers, Sliders, Palette } from 'lucide-react';
+import { Monitor, Sparkles } from 'lucide-react';
 import { HERO_IMAGE } from '../constants';
 
 export const ObsOverlayShowcase: React.FC = () => {
-  const [copied, setCopied] = useState(false);
-  const [selectedTheme, setSelectedTheme] = useState<'kick-green' | 'dark-stealth' | 'glass-minimal'>('kick-green');
-  const [displayCount, setDisplayCount] = useState<number>(3);
+  const [platform, setPlatform] = useState<'kick' | 'youtube' | 'twitch'>('kick');
 
-  const mockUrl = 'https://chatcue.app/overlay/v1?token=cc_live_stream_99';
-
-  const handleCopy = () => {
-    navigator.clipboard.writeText(mockUrl);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2500);
+  const platformStyles = {
+    kick: {
+      accent: '#53FC18',
+      textAccent: 'text-[#53FC18]',
+      bgAccent: 'bg-[#53FC18]/20',
+      border: 'border-[#53FC18]/50',
+      shadow: 'shadow-[0_0_30px_rgba(83,252,24,0.25)]',
+      label: 'Kick Green'
+    },
+    youtube: {
+      accent: '#FF0033',
+      textAccent: 'text-red-500',
+      bgAccent: 'bg-red-500/20',
+      border: 'border-red-500/50',
+      shadow: 'shadow-[0_0_30px_rgba(255,0,51,0.25)]',
+      label: 'YouTube Red'
+    },
+    twitch: {
+      accent: '#9146FF',
+      textAccent: 'text-[#A970FF]',
+      bgAccent: 'bg-[#9146FF]/20',
+      border: 'border-purple-500/50',
+      shadow: 'shadow-[0_0_30px_rgba(145,70,255,0.25)]',
+      label: 'Twitch Purple'
+    }
   };
 
+  const activeStyle = platformStyles[platform];
+
   return (
-    <section id="obs-overlay" className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        {/* Left Column (5 cols): Description and Customizer */}
+    <section id="obs-overlay" className="py-10 sm:py-14 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        {/* Left Column (5 cols): Description and Platform Toggle */}
         <div className="lg:col-span-5 space-y-6">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#53FC18]/10 border border-[#53FC18]/25 text-[#53FC18] text-xs font-semibold">
-            <Monitor className="w-3.5 h-3.5" />
-            <span>OBS & Streamlabs Native Integration</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#53FC18]/10 border border-[#53FC18]/30 text-[#53FC18] text-xs font-semibold">
+            <Monitor className="w-3.5 h-3.5 text-[#53FC18]" />
+            <span>Works with OBS & Streamlabs</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-white tracking-tight text-balance">
@@ -30,82 +49,48 @@ export const ObsOverlayShowcase: React.FC = () => {
           </h2>
 
           <p className="text-sm sm:text-base text-neutral-300 leading-relaxed">
-            Generate a transparent Browser Source overlay that displays the Top 3 chat requests right on your stream screen. When viewers see their questions hit the leaderboard, engagement explodes.
+            Generate a transparent Browser Source overlay that displays the Top 3 chat requests right on your stream screen. When viewers see their requests hit the stream HUD, engagement explodes.
           </p>
 
-          {/* Overlay Customizer Controls */}
-          <div className="bg-[#0A120D] border border-neutral-800 rounded-xl p-5 space-y-4">
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-bold uppercase tracking-wider text-neutral-300 flex items-center gap-2">
-                <Palette className="w-3.5 h-3.5 text-[#53FC18]" />
-                HUD Color Accent
-              </span>
-              <div className="flex items-center gap-2">
-                <button
-                  onClick={() => setSelectedTheme('kick-green')}
-                  className={`w-6 h-6 rounded-full bg-[#53FC18] border-2 transition-all ${
-                    selectedTheme === 'kick-green' ? 'border-white scale-110' : 'border-transparent opacity-60'
-                  }`}
-                  title="Kick Neon Lime"
-                />
-                <button
-                  onClick={() => setSelectedTheme('dark-stealth')}
-                  className={`w-6 h-6 rounded-full bg-neutral-700 border-2 transition-all ${
-                    selectedTheme === 'dark-stealth' ? 'border-white scale-110' : 'border-transparent opacity-60'
-                  }`}
-                  title="Dark Stealth"
-                />
-                <button
-                  onClick={() => setSelectedTheme('glass-minimal')}
-                  className={`w-6 h-6 rounded-full bg-neutral-300 border-2 transition-all ${
-                    selectedTheme === 'glass-minimal' ? 'border-white scale-110' : 'border-transparent opacity-60'
-                  }`}
-                  title="Glass Minimal"
-                />
-              </div>
-            </div>
-
-            <div className="flex items-center justify-between pt-3 border-t border-neutral-800/80">
-              <span className="text-xs font-bold uppercase tracking-wider text-neutral-300 flex items-center gap-2">
-                <Sliders className="w-3.5 h-3.5 text-[#53FC18]" />
-                Visible Cues
+          {/* Platform Toggle */}
+          <div className="bg-[#0A120D] border border-neutral-800 rounded-xl p-5 space-y-3">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <span className="text-xs font-bold uppercase tracking-wider text-neutral-300">
+                Platform: Kick / YouTube / Twitch
               </span>
               <div className="flex items-center gap-1.5 bg-black/60 p-1 rounded-lg border border-neutral-800">
-                {[2, 3, 4].map(n => (
+                {(['kick', 'youtube', 'twitch'] as const).map(p => (
                   <button
-                    key={n}
-                    onClick={() => setDisplayCount(n)}
-                    className={`px-2.5 py-0.5 text-xs font-mono font-bold rounded transition-colors ${
-                      displayCount === n ? 'bg-[#53FC18] text-black' : 'text-neutral-400 hover:text-white'
+                    key={p}
+                    onClick={() => setPlatform(p)}
+                    className={`px-3 py-1 text-xs font-bold rounded capitalize transition-all ${
+                      platform === p
+                        ? p === 'kick'
+                          ? 'bg-[#53FC18] text-black shadow-sm'
+                          : p === 'youtube'
+                          ? 'bg-[#FF0033] text-white shadow-sm'
+                          : 'bg-[#9146FF] text-white shadow-sm'
+                        : 'text-neutral-400 hover:text-white'
                     }`}
                   >
-                    Top {n}
+                    {p}
                   </button>
                 ))}
               </div>
             </div>
+            <p className="text-[11px] text-neutral-400">
+              Accent color follows the platform automatically: Kick green (#53fc18), YouTube red (#ff0033), Twitch purple (#9146ff).
+            </p>
           </div>
 
-          {/* Copy Browser Source URL Box */}
-          <div className="space-y-2">
-            <label className="text-xs font-medium text-neutral-400 block">
-              One-click OBS Browser Source Link:
-            </label>
-            <div className="flex items-center gap-2 p-2 bg-black/70 border border-neutral-800 rounded-xl">
-              <input
-                type="text"
-                readOnly
-                value={mockUrl}
-                className="flex-1 bg-transparent text-xs font-mono text-neutral-300 px-2 select-all focus:outline-none truncate"
-              />
-              <button
-                onClick={handleCopy}
-                className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-[#53FC18] hover:bg-[#70FF3F] text-black font-bold text-xs transition-colors shrink-0"
-              >
-                {copied ? <Check className="w-3.5 h-3.5 stroke-[3]" /> : <Copy className="w-3.5 h-3.5 stroke-[2]" />}
-                <span>{copied ? 'Copied URL!' : 'Copy'}</span>
-              </button>
-            </div>
+          {/* Overlay Link Notice */}
+          <div className="p-4 rounded-xl bg-black/60 border border-neutral-800 text-xs text-neutral-400 leading-relaxed">
+            <p className="text-neutral-300 font-medium">
+              Your personal overlay link is on your ChatCue dashboard &rarr; click &ldquo;Copy OBS overlay link&rdquo;.
+            </p>
+            <p className="text-[11px] text-neutral-400 mt-2">
+              Shows the top 3 chat requests live with counts. Questions are kept on your private dashboard.
+            </p>
           </div>
         </div>
 
@@ -133,80 +118,51 @@ export const ObsOverlayShowcase: React.FC = () => {
 
             {/* The Active OBS Browser Source Widget mounted on stream screen */}
             <div
-              className={`absolute top-6 right-6 max-w-xs w-full p-4 rounded-xl backdrop-blur-md border transition-all duration-300 shadow-2xl ${
-                selectedTheme === 'kick-green'
-                  ? 'bg-[#061108]/90 border-[#53FC18]/50 shadow-[0_0_30px_rgba(83,252,24,0.25)]'
-                  : selectedTheme === 'dark-stealth'
-                  ? 'bg-black/90 border-neutral-700 shadow-xl'
-                  : 'bg-white/10 border-white/20 shadow-xl'
-              }`}
+              className={`absolute top-6 right-6 max-w-xs w-full p-4 rounded-xl backdrop-blur-md border transition-all duration-300 ${activeStyle.border} ${activeStyle.shadow} bg-black/85`}
             >
               <div className="flex items-center justify-between pb-2 mb-2 border-b border-neutral-800">
                 <div className="flex items-center gap-1.5">
-                  <Sparkles
-                    className={`w-3.5 h-3.5 ${
-                      selectedTheme === 'kick-green' ? 'text-[#53FC18]' : 'text-neutral-300'
-                    }`}
-                  />
+                  <Sparkles className={`w-3.5 h-3.5 ${activeStyle.textAccent}`} />
                   <span className="text-[11px] font-bold uppercase tracking-wider text-white font-display">
                     TOP CHAT REQUESTS
                   </span>
                 </div>
-                <span
-                  className={`text-[9px] font-mono font-bold px-1.5 py-0.5 rounded ${
-                    selectedTheme === 'kick-green'
-                      ? 'bg-[#53FC18]/20 text-[#53FC18]'
-                      : 'bg-neutral-800 text-neutral-300'
-                  }`}
-                >
+                <span className={`text-[9px] font-mono font-bold px-1.5 py-0.5 rounded ${activeStyle.bgAccent} ${activeStyle.textAccent}`}>
                   LIVE
                 </span>
               </div>
 
-              {/* Stacked list of cues on the OBS widget */}
+              {/* Strict Top 3 chat requests list */}
               <div className="space-y-2">
                 {[
-                  { text: 'Song name / playlist link', count: 64 },
-                  { text: 'Crosshair settings & sens', count: 42 },
-                  { text: 'Switch to GTA RP next game', count: 31 },
-                  { text: 'Facecam zoom please', count: 18 }
-                ]
-                  .slice(0, displayCount)
-                  .map((item, i) => (
-                    <div
-                      key={item.text}
-                      className="flex items-center justify-between gap-2 p-2 rounded-lg bg-black/60 border border-neutral-800 text-xs"
-                    >
-                      <div className="flex items-center gap-2 truncate">
-                        <span
-                          className={`font-mono font-extrabold text-[11px] ${
-                            selectedTheme === 'kick-green' ? 'text-[#53FC18]' : 'text-neutral-400'
-                          }`}
-                        >
-                          #{i + 1}
-                        </span>
-                        <span className="text-white truncate font-medium text-[11px]">
-                          {item.text}
-                        </span>
-                      </div>
-                      <span
-                        className={`font-mono font-bold text-[10px] px-1.5 py-0.5 rounded shrink-0 ${
-                          selectedTheme === 'kick-green'
-                            ? 'bg-[#53FC18]/15 text-[#53FC18]'
-                            : 'bg-neutral-800 text-neutral-300'
-                        }`}
-                      >
-                        {item.count}x
+                  { text: 'reacciones y risas', count: 18 },
+                  { text: 'Song name / playlist link', count: 14 },
+                  { text: 'mencionando a farfadox', count: 9 }
+                ].map((item, i) => (
+                  <div
+                    key={item.text}
+                    className="flex items-center justify-between gap-2 p-2 rounded-lg bg-black/60 border border-neutral-800 text-xs"
+                  >
+                    <div className="flex items-center gap-2 truncate">
+                      <span className={`font-mono font-extrabold text-[11px] ${activeStyle.textAccent}`}>
+                        #{i + 1}
+                      </span>
+                      <span className="text-white truncate font-medium text-[11px]">
+                        {item.text}
                       </span>
                     </div>
-                  ))}
+                    <span className={`font-mono font-bold text-[10px] px-1.5 py-0.5 rounded shrink-0 ${activeStyle.bgAccent} ${activeStyle.textAccent}`}>
+                      {item.count}x
+                    </span>
+                  </div>
+                ))}
               </div>
             </div>
 
             {/* Bottom info pill on OBS canvas */}
             <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-[11px] text-neutral-400 bg-black/70 backdrop-blur-md px-3 py-1.5 rounded-lg border border-neutral-800">
               <span>Resolution: 1920x1080 · 60 FPS</span>
-              <span className="text-[#53FC18] font-medium">ChatCue Extension Active</span>
+              <span className="text-[#53FC18] font-medium">ChatCue Browser Source Active</span>
             </div>
           </div>
         </div>

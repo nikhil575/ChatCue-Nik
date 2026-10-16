@@ -10,32 +10,32 @@ const FAQS: FaqItem[] = [
   {
     question: 'Is ChatCue a global tool? Which languages and regions are supported?',
     answer:
-      'ChatCue is 100% global and supports all major languages and regional dialects—including Spanish (Spain & Latin America), Portuguese (Brazil & Portugal), English, French, German, Japanese, and Hinglish. It recognizes colloquial streamer slang, regional memes (e.g., "guacha", "farfadox", "SAJ", "xdd", "op clutch"), and Romanized text effortlessly.'
+      'ChatCue is 100% global and supports all major languages and regional dialects, including Spanish (Spain & Latin America), Portuguese (Brazil & Portugal), English, French, German, Japanese, and Hinglish. It recognizes colloquial streamer slang, regional memes (e.g., "guacha", "farfadox", "SAJ", "xdd", "op clutch"), and Romanized text effortlessly.'
   },
   {
     question: 'How do "CHAT WANTS NOW" and "QUESTIONS" work on the dashboard?',
     answer:
-      'CHAT WANTS NOW detects audience sentiment and groups repeated viewer requests within 15 seconds, automatically dropping off after 3 minutes of inactivity. The QUESTIONS panel isolates questions asked in the last 3 minutes and gives you a one-click checkmark to mark them answered on stream, which also updates your OBS HUD.'
+      'CHAT WANTS NOW detects audience sentiment and groups repeated viewer requests within 15 seconds, automatically dropping off after 3 minutes of inactivity. The QUESTIONS panel isolates questions asked in the last 3 minutes and gives you a one-click checkmark to mark them answered on stream.'
   },
   {
     question: 'Does ChatCue cause frame drops or lag in OBS Studio or my game?',
     answer:
-      'Zero lag. ChatCue is a lightweight Chrome extension that parses the DOM of your open chat tabs locally inside the browser. It does not run heavy external servers, nor does it consume GPU or CPU power from OBS Studio or your game.'
+      "No. ChatCue reads your open chat tab in the browser and the AI runs on ChatCue's servers, so nothing heavy runs on your PC and there's nothing to install in OBS."
   },
   {
     question: 'Do I need to enter stream keys, passwords, or developer API tokens?',
     answer:
-      'Never. ChatCue requires zero API keys, no passwords, and no bot authorizations. You simply install the Chrome extension and keep your regular YouTube Live chat or Kick chat popout open.'
+      'Never. ChatCue requires zero API keys, no passwords, and no bot authorizations. You simply install the Chrome extension and keep your regular YouTube Live, Kick, or Twitch chat tab open.'
   },
   {
     question: 'How does the "FLAGGED" moderation box protect my stream?',
     answer:
-      'Flags in ChatCue never delete or ban anything automatically—you and your mods remain in complete control. It simply isolates flagged toxic or abusive messages into a dedicated sidebar with repeat offender counts (e.g. "Flagged 3x") so you don\'t get distracted mid-match.'
+      'Flags in ChatCue never delete or ban anything automatically. You and your mods remain in complete control. It simply isolates flagged toxic or abusive messages into a dedicated sidebar with repeat offender counts (e.g. "Flagged 3x") so you don\'t get distracted mid-match.'
   },
   {
     question: 'How do I add the live requests overlay into OBS Studio or Streamlabs?',
     answer:
-      'Inside the dashboard, click "Copy OBS overlay link". In OBS Studio, add a new "Browser Source", paste the link, set your preferred size (e.g., 1920x1080), and it will render a crisp, transparent live request widget on screen.'
+      'Click "Copy OBS overlay link" on the dashboard, then in OBS add a Browser Source and paste the link. It shows the top 3 chat requests live.'
   }
 ];
 

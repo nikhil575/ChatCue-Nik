@@ -36,10 +36,10 @@ export const Navbar: React.FC = () => {
           {/* Zone 2: 4-5 concise single-line nav links */}
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-neutral-300">
             <a
-              href="#simulator"
+              href="#how-it-works"
               className="hover:text-[#53FC18] transition-colors whitespace-nowrap shrink-0"
             >
-              Live Simulator
+              How it works
             </a>
             <a
               href="#features"
@@ -52,12 +52,6 @@ export const Navbar: React.FC = () => {
               className="hover:text-[#53FC18] transition-colors whitespace-nowrap shrink-0"
             >
               OBS Overlay
-            </a>
-            <a
-              href="#streamers"
-              className="hover:text-[#53FC18] transition-colors whitespace-nowrap shrink-0"
-            >
-              Streamers
             </a>
             <a
               href="#faq"
@@ -96,11 +90,11 @@ export const Navbar: React.FC = () => {
         <div className="md:hidden bg-[#0A120D] border-b border-[#53FC18]/20 px-6 py-5 shadow-2xl animate-in slide-in-from-top-2 duration-200">
           <nav className="flex flex-col gap-4 text-sm font-medium text-neutral-200">
             <a
-              href="#simulator"
+              href="#how-it-works"
               onClick={() => setMobileMenuOpen(false)}
               className="py-1 hover:text-[#53FC18] transition-colors"
             >
-              Live Simulator
+              How it works
             </a>
             <a
               href="#features"
@@ -115,13 +109,6 @@ export const Navbar: React.FC = () => {
               className="py-1 hover:text-[#53FC18] transition-colors"
             >
               OBS Overlay
-            </a>
-            <a
-              href="#streamers"
-              onClick={() => setMobileMenuOpen(false)}
-              className="py-1 hover:text-[#53FC18] transition-colors"
-            >
-              Streamers
             </a>
             <a
               href="#faq"

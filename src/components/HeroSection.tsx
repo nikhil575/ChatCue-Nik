@@ -1,8 +1,9 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { ArrowUpRight, Star, Chrome, Zap, Shield, Sparkles, Globe2 } from 'lucide-react';
+import { ArrowUpRight, Chrome, Zap, Shield, Sparkles, Globe2 } from 'lucide-react';
 import { CHROME_STORE_URL, HERO_IMAGE } from '../constants';
 import { ChatCueLogo } from './ChatCueLogo';
+import dashboardFull from '../../dashboard-full.webp';
 
 export const HeroSection: React.FC = () => {
   return (
@@ -12,10 +13,10 @@ export const HeroSection: React.FC = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         {/* Left Column (7 cols): Copy, Value Prop & CTAs */}
-        <div className="lg:col-span-7 space-y-6 text-left">
+        <div className="lg:col-span-12 max-w-3xl mx-auto space-y-6 text-center">
           {/* Unboxed clean metadata kicker with platform support */}
-          <div className="flex items-center gap-2 text-xs sm:text-sm text-neutral-400">
-            <span className="font-semibold text-white">Live Stream AI Cockpit</span>
+          <div className="flex flex-wrap items-center justify-center gap-2 text-xs sm:text-sm text-neutral-400">
+            <span className="font-semibold text-white">Live chat dashboard</span>
             <span aria-hidden="true">·</span>
             <span className="text-[#53FC18] font-medium">YouTube, Kick & Twitch</span>
             <span aria-hidden="true">·</span>
@@ -29,7 +30,7 @@ export const HeroSection: React.FC = () => {
             transition={{ duration: 0.4 }}
             className="text-4xl sm:text-6xl font-display font-extrabold tracking-tight text-white text-balance leading-[1.08]"
           >
-            Never Miss a Critical Question in a <span className="text-[#53FC18] drop-shadow-[0_0_25px_rgba(83,252,24,0.4)]">1,000 Msg/Min Flood.</span>
+            Never miss what <span className="text-[#53FC18] drop-shadow-[0_0_25px_rgba(83,252,24,0.4)]">your chat</span> is asking for.
           </motion.h1>
 
           {/* Value Proposition Description */}
@@ -37,13 +38,13 @@ export const HeroSection: React.FC = () => {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.1 }}
-            className="text-base sm:text-lg text-neutral-300 max-w-xl leading-relaxed"
+            className="text-base sm:text-lg text-neutral-300 max-w-2xl mx-auto leading-relaxed"
           >
-            ChatCue turns chaotic live stream chats into an organized, prioritized cue cockpit. Group repeated viewer requests, catch questions in the last 3 minutes, isolate Super Chats, Kick tips & Twitch bits, and project real-time requests onto your OBS overlay in any language worldwide.
+            ChatCue reads your YouTube, Kick or Twitch chat and shows what viewers keep asking for, their questions and their tips, all on one screen. Free Chrome extension. Works with Hinglish, English, Spanish, Portuguese and more.
           </motion.p>
 
           {/* Supported platform & global language tags */}
-          <div className="flex flex-wrap items-center gap-2.5 pt-1">
+          <div className="flex flex-wrap items-center justify-center gap-2.5 pt-1">
             {/* Kick Badge with Cute Logo */}
             <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-[#0E1A11]/90 border border-[#53FC18]/35 text-xs font-semibold text-[#53FC18] shadow-[0_0_15px_rgba(83,252,24,0.08)] hover:scale-105 transition-transform duration-200">
               <div className="w-5 h-5 rounded-lg bg-[#53FC18]/20 border border-[#53FC18]/40 flex items-center justify-center shrink-0 shadow-sm">
@@ -88,7 +89,7 @@ export const HeroSection: React.FC = () => {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.2 }}
-            className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-3"
+            className="flex flex-col sm:flex-row items-stretch sm:items-center sm:justify-center gap-4 pt-3"
           >
             <a
               href={CHROME_STORE_URL}
@@ -97,30 +98,21 @@ export const HeroSection: React.FC = () => {
               className="inline-flex items-center justify-center gap-3 px-7 py-3.5 text-base font-extrabold text-black bg-[#53FC18] hover:bg-[#70FF3F] rounded-xl transition-all duration-200 shadow-[0_0_30px_rgba(83,252,24,0.4)] hover:shadow-[0_0_40px_rgba(83,252,24,0.65)] hover:scale-[1.02] active:scale-[0.98] whitespace-nowrap"
             >
               <Chrome className="w-5 h-5 stroke-[2.5]" />
-              <span>Add to Chrome - Free</span>
+              <span>Add to Chrome, it's free</span>
               <ArrowUpRight className="w-4 h-4 stroke-[2.5]" />
             </a>
 
             <a
-              href="#simulator"
+              href="#how-it-works"
               className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold text-neutral-200 hover:text-white bg-neutral-900/80 hover:bg-neutral-800 border border-neutral-800 hover:border-[#53FC18]/40 rounded-xl transition-all whitespace-nowrap"
             >
               <Zap className="w-4 h-4 text-[#53FC18]" />
-              <span>Test Real Cockpit Demo</span>
+              <span>See how it works</span>
             </a>
           </motion.div>
 
-          {/* Social Proof & Trust Strip */}
-          <div className="pt-4 border-t border-neutral-800/80 flex flex-wrap items-center gap-y-2 gap-x-6 text-xs text-neutral-400">
-            <div className="flex items-center gap-1.5">
-              <div className="flex text-amber-400">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-3.5 h-3.5 fill-current" />
-                ))}
-              </div>
-              <span className="font-semibold text-white">5.0 Star Rating</span>
-            </div>
-            <span aria-hidden="true" className="text-neutral-700">|</span>
+          {/* Trust Strip */}
+          <div className="pt-4 border-t border-neutral-800/80 flex flex-wrap items-center justify-center gap-y-2 gap-x-6 text-xs text-neutral-400">
             <div className="flex items-center gap-1.5">
               <Shield className="w-3.5 h-3.5 text-[#53FC18]" />
               <span>Zero Setup · No API Keys</span>
@@ -133,98 +125,60 @@ export const HeroSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Right Column (5 cols): Authentic Dashboard Mini Preview Card */}
-        <div className="lg:col-span-5 relative">
-          <div className="relative rounded-2xl overflow-hidden border border-[#53FC18]/30 bg-[#060D07] shadow-[0_0_50px_rgba(83,252,24,0.18)] p-4 sm:p-5">
-            {/* Top real dashboard mini bar */}
-            <div className="flex items-center justify-between pb-3 mb-3 border-b border-neutral-800 text-xs font-mono">
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#53FC18] animate-pulse" />
-                <span className="text-white font-bold text-xs truncate">
-                  DEDSAFIO DIA 22
+        {/* Product shot: the full real ChatCue dashboard (sample chat, no real viewers) */}
+        <div className="lg:col-span-12 relative mt-2 sm:mt-6">
+          <div className="absolute -inset-x-8 -inset-y-10 rounded-[48px] bg-[#53FC18]/10 blur-3xl pointer-events-none" />
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="relative"
+          >
+            <div className="relative overflow-hidden rounded-2xl border border-[#53FC18]/30 bg-[#060D07] shadow-[0_0_60px_rgba(83,252,24,0.18)] origin-top transition-transform duration-700 ease-out lg:[transform:perspective(2200px)_rotateX(5deg)] lg:hover:[transform:perspective(2200px)_rotateX(0deg)]">
+              <div className="flex items-center gap-2 border-b border-white/10 bg-black/40 px-4 py-2.5">
+                <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
+                <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" />
+                <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
+                <span className="ml-3 rounded-md bg-white/5 px-3 py-0.5 text-[11px] font-mono text-neutral-400">ChatCue dashboard</span>
+              </div>
+              <div className="relative">
+                <img
+                  src={dashboardFull}
+                  alt="The full ChatCue dashboard: ranked chat requests, open questions, every message, flagged messages and people"
+                  width={2400}
+                  height={1350}
+                  className="block w-full h-auto"
+                />
+                <span className="absolute -translate-x-1/2 -translate-y-1/2 flex h-6 w-6 sm:h-8 sm:w-8" style={{ left: '13.6%', top: '13.2%' }}>
+                  <span className="absolute inset-0 rounded-full bg-[#53FC18]/50 animate-ping" />
+                  <span className="relative flex h-full w-full items-center justify-center rounded-full bg-[#53FC18] text-[#060D07] text-xs sm:text-sm font-extrabold shadow-[0_0_0_4px_rgba(83,252,24,0.25)]">1</span>
+                </span>
+                <span className="absolute -translate-x-1/2 -translate-y-1/2 flex h-6 w-6 sm:h-8 sm:w-8" style={{ left: '10.2%', top: '62.4%' }}>
+                  <span className="absolute inset-0 rounded-full bg-[#53FC18]/50 animate-ping" />
+                  <span className="relative flex h-full w-full items-center justify-center rounded-full bg-[#53FC18] text-[#060D07] text-xs sm:text-sm font-extrabold shadow-[0_0_0_4px_rgba(83,252,24,0.25)]">2</span>
+                </span>
+                <span className="absolute -translate-x-1/2 -translate-y-1/2 flex h-6 w-6 sm:h-8 sm:w-8" style={{ left: '79.9%', top: '12.9%' }}>
+                  <span className="absolute inset-0 rounded-full bg-[#53FC18]/50 animate-ping" />
+                  <span className="relative flex h-full w-full items-center justify-center rounded-full bg-[#53FC18] text-[#060D07] text-xs sm:text-sm font-extrabold shadow-[0_0_0_4px_rgba(83,252,24,0.25)]">3</span>
                 </span>
               </div>
-              <div className="flex items-center gap-3 text-[11px] text-neutral-400">
-                <span>PER MIN: <strong className="text-[#53FC18]">48</strong></span>
-                <span>MESSAGES: <strong className="text-white">482</strong></span>
+            </div>
+            <div className="mt-6 grid gap-3 sm:grid-cols-3">
+              <div className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3">
+                <span className="flex h-6 w-6 flex-none items-center justify-center rounded-full bg-[#53FC18] text-[#060D07] text-xs font-extrabold">1</span>
+                <span className="text-sm text-neutral-200 leading-snug">Top requests, ranked by how many people ask</span>
+              </div>
+              <div className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3">
+                <span className="flex h-6 w-6 flex-none items-center justify-center rounded-full bg-[#53FC18] text-[#060D07] text-xs font-extrabold">2</span>
+                <span className="text-sm text-neutral-200 leading-snug">Questions you haven't answered yet</span>
+              </div>
+              <div className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3">
+                <span className="flex h-6 w-6 flex-none items-center justify-center rounded-full bg-[#53FC18] text-[#060D07] text-xs font-extrabold">3</span>
+                <span className="text-sm text-neutral-200 leading-snug">Abuse flagged for you. Nothing gets deleted</span>
               </div>
             </div>
-
-            {/* Mini 3-column replica representation */}
-            <div className="grid grid-cols-2 gap-3 text-xs">
-              {/* Chat Wants Now */}
-              <div className="p-3 rounded-xl bg-black/60 border border-[#53FC18]/30 space-y-1.5">
-                <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-bold text-[#53FC18] font-mono uppercase">
-                    CHAT WANTS NOW
-                  </span>
-                  <span className="text-[9px] bg-[#53FC18] text-black font-bold px-1.5 py-0.2 rounded-full">
-                    divertido
-                  </span>
-                </div>
-                <div className="space-y-1 pt-1">
-                  <div className="flex justify-between items-center text-[11px] bg-neutral-900/80 px-2 py-1 rounded">
-                    <span className="truncate">reacciones y risas</span>
-                    <strong className="text-[#53FC18] font-mono">5</strong>
-                  </div>
-                  <div className="flex justify-between items-center text-[11px] bg-neutral-900/80 px-2 py-1 rounded">
-                    <span className="truncate">drop playlist link</span>
-                    <strong className="text-[#53FC18] font-mono">4</strong>
-                  </div>
-                </div>
-              </div>
-
-              {/* Questions */}
-              <div className="p-3 rounded-xl bg-black/60 border border-neutral-800 space-y-1.5">
-                <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-bold text-[#52E3C2] font-mono uppercase">
-                    QUESTIONS (3 MIN)
-                  </span>
-                  <span className="text-[9px] text-[#53FC18] font-mono">TICK OFF</span>
-                </div>
-                <div className="space-y-1 pt-1">
-                  <div className="p-1.5 rounded bg-neutral-900/80 text-[10px] text-neutral-200 truncate flex items-center justify-between">
-                    <span className="truncate">¿sensibilidad en dpi?</span>
-                    <span className="text-[#53FC18] font-mono">×4</span>
-                  </div>
-                  <div className="p-1.5 rounded bg-neutral-900/80 text-[10px] text-neutral-200 truncate flex items-center justify-between">
-                    <span className="truncate">what audio mixer?</span>
-                    <span className="text-[#53FC18] font-mono">×3</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Every Message Stream snippet */}
-            <div className="mt-3 p-2.5 rounded-xl bg-black/70 border border-neutral-800 space-y-1.5">
-              <div className="flex items-center justify-between text-[10px] font-mono text-neutral-400 pb-1 border-b border-neutral-800">
-                <span className="text-white font-bold">EVERY MESSAGE</span>
-                <span className="text-[#53FC18]">All · Questions · Flagged · Super Chats</span>
-              </div>
-              <div className="space-y-1 text-[11px]">
-                <div className="flex items-center gap-2 text-neutral-300">
-                  <span className="text-neutral-500 font-mono text-[9px]">10:35</span>
-                  <span className="text-purple-400 font-bold">fernandoGR20:</span>
-                  <span className="truncate">xdd jajaja tremenda jugada</span>
-                  <span className="text-[9px] text-[#53FC18] font-mono">×8</span>
-                </div>
-                <div className="flex items-center gap-2 text-neutral-300">
-                  <span className="text-neutral-500 font-mono text-[9px]">10:35</span>
-                  <span className="text-amber-400 font-bold">Aarav_YT:</span>
-                  <span className="truncate text-amber-200 font-medium">Super Chat $20.00: Great stream!</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Bottom verified indicator */}
-            <div className="mt-3 flex items-center justify-between text-[11px] text-neutral-400">
-              <span className="flex items-center gap-1.5">
-                <Globe2 className="w-3.5 h-3.5 text-[#53FC18]" />
-                Spanish, English, Hinglish, Portuguese & more
-              </span>
-              <span className="text-[#53FC18] font-semibold">Live Cockpit</span>
-            </div>
-          </div>
+            <p className="mt-3 text-center text-xs text-neutral-500">The real ChatCue dashboard, shown with sample chat.</p>
+          </motion.div>
         </div>
       </div>
     </section>

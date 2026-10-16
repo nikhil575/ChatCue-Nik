@@ -12,7 +12,7 @@ export const ChaosComparison: React.FC = () => {
           <span>Before vs After</span>
         </div>
         <h2 className="text-3xl sm:text-5xl font-display font-extrabold text-white tracking-tight text-balance">
-          Why Top Streamers Never Stream Raw Chat Again
+          Why Stream With ChatCue
         </h2>
         <p className="mt-4 text-base sm:text-lg text-neutral-400">
           The difference between a stressed streamer squinting at an unreadable scroll, and an interactive broadcast where the community feels heard.
@@ -36,7 +36,7 @@ export const ChaosComparison: React.FC = () => {
               <li className="flex items-start gap-3">
                 <span className="text-red-500 shrink-0 font-bold">✕</span>
                 <span>
-                  <strong className="text-white">Messages fly by in milliseconds:</strong> You miss 90% of genuine viewer questions while concentrating on gameplay.
+                  <strong className="text-white">Messages fly by in milliseconds:</strong> Real viewer questions get buried while concentrating on gameplay.
                 </span>
               </li>
               <li className="flex items-start gap-3">
@@ -73,11 +73,11 @@ export const ChaosComparison: React.FC = () => {
           <div>
             <div className="flex items-center gap-2 text-[#53FC18] font-bold text-sm uppercase tracking-wider mb-4">
               <CheckCircle2 className="w-5 h-5 text-[#53FC18]" />
-              <span>Streaming with ChatCue Cockpit</span>
+              <span>Streaming with ChatCue</span>
             </div>
 
             <h3 className="text-xl sm:text-2xl font-bold text-white mb-4">
-              Instant Clarity & 3x Higher Engagement
+              Instant Clarity, Nothing Missed
             </h3>
 
             <ul className="space-y-4 text-sm text-neutral-300">
@@ -96,13 +96,13 @@ export const ChaosComparison: React.FC = () => {
               <li className="flex items-start gap-3">
                 <span className="text-[#53FC18] shrink-0 font-bold">✓</span>
                 <span>
-                  <strong className="text-white">Tip & Sub Protection:</strong> Every Super Chat and Kick tip stays pinned in your economy ledger until acknowledged.
+                  <strong className="text-white">Tips Never Get Lost:</strong> Super Chats and tips get their own filter and People tab, so you can thank everyone after a fight.
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-[#53FC18] shrink-0 font-bold">✓</span>
                 <span>
-                  <strong className="text-white">Automatic Toxicity Shield:</strong> Flagged spam and repeat offenders are dimmed without cluttering your HUD.
+                  <strong className="text-white">Flagged Panel:</strong> Abusive messages and repeat offenders collect in their own Flagged panel. Nothing is deleted; you and your mods decide.
                 </span>
               </li>
             </ul>

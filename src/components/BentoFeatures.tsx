@@ -53,27 +53,40 @@ export const BentoFeatures: React.FC = () => {
               ChatCue detects the instant audience sentiment shifts. When viewers start demanding reactions, song names, or game switches, they appear in your &ldquo;CHAT WANTS NOW&rdquo; box with real-time repeat counts.
             </p>
 
-            {/* Visual replica of CHAT WANTS NOW */}
+            {/* Visual replica of CHAT WANTS NOW (Ranked Cards Style) */}
             <div className="bg-black/60 border border-neutral-800 rounded-xl p-4 space-y-3">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-bold text-[#53FC18] font-mono uppercase">
+                <span className="text-xs font-bold text-[#53FC18] font-mono uppercase tracking-wider">
                   CHAT WANTS NOW
                 </span>
-                <span className="px-2 py-0.5 rounded-full bg-[#53FC18] text-black font-bold text-[10px] font-mono">
+                <span className="px-2.5 py-0.5 rounded-full bg-[#53FC18] text-black font-extrabold text-[11px] font-mono">
                   chat: divertido
                 </span>
               </div>
 
-              <div className="flex flex-wrap gap-2 text-xs">
-                <span className="px-3 py-1 rounded-lg bg-neutral-900 border border-neutral-700 text-neutral-200">
-                  reacciones y risas <strong className="text-[#53FC18] font-mono ml-1">5</strong>
-                </span>
-                <span className="px-3 py-1 rounded-lg bg-neutral-900 border border-neutral-700 text-neutral-200">
-                  mencionando a farfadox <strong className="text-[#53FC18] font-mono ml-1">3</strong>
-                </span>
-                <span className="px-3 py-1 rounded-lg bg-neutral-900 border border-neutral-700 text-neutral-200">
-                  chistes de wachas <strong className="text-[#53FC18] font-mono ml-1">3</strong>
-                </span>
+              {/* 2 Sample Ranked Cards */}
+              <div className="space-y-2">
+                <div className="flex items-center gap-3 p-3 rounded-[12px] bg-white/[0.035] border border-white/10 border-l-4 border-l-[#53FC18]">
+                  <span className="text-[22px] font-bold text-white font-mono w-6 text-center shrink-0">1</span>
+                  <div className="flex-1 min-w-0">
+                    <div className="text-[15px] sm:text-[16px] font-bold text-white leading-tight">reacciones y risas</div>
+                    <div className="text-[12.5px] text-neutral-400 leading-snug line-clamp-2 mt-0.5">
+                      &ldquo;jajaja reacciona&rdquo; &ldquo;react pls&rdquo; &ldquo;más reacciones&rdquo;
+                    </div>
+                  </div>
+                  <span className="text-sm sm:text-base font-mono font-bold text-[#53FC18] shrink-0">x18</span>
+                </div>
+
+                <div className="flex items-center gap-3 p-3 rounded-[12px] bg-white/[0.035] border border-white/10 border-l-4 border-l-[#53FC18]">
+                  <span className="text-[22px] font-bold text-white font-mono w-6 text-center shrink-0">2</span>
+                  <div className="flex-1 min-w-0">
+                    <div className="text-[15px] sm:text-[16px] font-bold text-white leading-tight">drop playlist link</div>
+                    <div className="text-[12.5px] text-neutral-400 leading-snug line-clamp-2 mt-0.5">
+                      &ldquo;song name?&rdquo; &ldquo;bhai playlist link dedo&rdquo; &ldquo;what track&rdquo;
+                    </div>
+                  </div>
+                  <span className="text-sm sm:text-base font-mono font-bold text-[#53FC18] shrink-0">x14</span>
+                </div>
               </div>
             </div>
           </div>
@@ -99,7 +112,7 @@ export const BentoFeatures: React.FC = () => {
             </h3>
 
             <p className="text-sm text-neutral-300 leading-relaxed mb-6">
-              Viewer questions from the last 3 minutes sit in your queue. Once you answer on stream, hit the checkmark to dismiss it and remove it from your OBS HUD.
+              Viewer questions from the last 3 minutes sit in your queue. Once you answer on stream, hit the checkmark to mark it answered.
             </p>
 
             <div className="space-y-2">
@@ -144,7 +157,7 @@ export const BentoFeatures: React.FC = () => {
             </h3>
 
             <p className="text-sm text-neutral-300 leading-relaxed mb-4">
-              ChatCue isn&apos;t just for English or Hinglish—it natively supports Spanish (ES/LATAM), Portuguese (Brazil), German, French, Japanese, and esports colloquialisms like &ldquo;SAJ&rdquo;, &ldquo;xdd&rdquo;, &ldquo;guacha&rdquo;, &ldquo;farfadox&rdquo;, &ldquo;mira code&rdquo;, and &ldquo;op clutch&rdquo;.
+              ChatCue isn&apos;t just for English or Hinglish, it natively supports Spanish (ES/LATAM), Portuguese (Brazil), German, French, Japanese, and esports colloquialisms like &ldquo;SAJ&rdquo;, &ldquo;xdd&rdquo;, &ldquo;guacha&rdquo;, &ldquo;farfadox&rdquo;, &ldquo;mira code&rdquo;, and &ldquo;op clutch&rdquo;.
             </p>
 
             {/* Multilingual Interactive Showcase Tabs */}
@@ -268,7 +281,7 @@ export const BentoFeatures: React.FC = () => {
 
           <div className="mt-6 flex items-center gap-2 text-xs font-semibold text-[#53FC18]">
             <CheckCircle2 className="w-4 h-4" />
-            <span>Zero CPU hit on OBS or gaming PC</span>
+            <span>Runs in your browser, nothing to install in OBS</span>
           </div>
         </div>
       </div>
