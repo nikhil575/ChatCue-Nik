@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --brand-kick: #53FC18;
+    --brand-kick-bright: #76FF44;
+    --brand-kick-dim: #238507;
+    --brand-yt: #FF0033;
+    --bg-obsidian: #040805;
+    --bg-surface: #0A120D;
+    --border-hairline: rgba(83, 252, 24, 0.14);
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: #040805;
+    color: #EDEDED;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+.text-kick {
+  color: #53FC18;
+}
+
+.bg-kick {
+  background-color: #53FC18;
+}
+
+.border-kick {
+  border-color: #53FC18;
+}
+
+.neon-glow {
+  box-shadow: 0 0 25px rgba(83, 252, 24, 0.28), 0 0 50px rgba(83, 252, 24, 0.12);
+}
+
+.neon-glow-strong {
+  box-shadow: 0 0 35px rgba(83, 252, 24, 0.45), 0 0 70px rgba(83, 252, 24, 0.2);
+}
+
+.neon-border {
+  border: 1px solid rgba(83, 252, 24, 0.25);
+}
+
+.neon-text {
+  text-shadow: 0 0 25px rgba(83, 252, 24, 0.5);
+}
+
+.glass-panel {
+  background: linear-gradient(135deg, rgba(14, 24, 17, 0.75) 0%, rgba(8, 14, 10, 0.85) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(83, 252, 24, 0.12);
+}
+
+.glass-panel-hover:hover {
+  border-color: rgba(83, 252, 24, 0.35);
+  box-shadow: 0 0 24px rgba(83, 252, 24, 0.12);
+}
+
+/* Custom cyber / stream grid pattern */
+.cyber-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(83, 252, 24, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(83, 252, 24, 0.035) 1px, transparent 1px);
+}
+
+/* Scanline effect */
+.scanline {
+  background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.25) 51%);
+  background-size: 100% 4px;
+}
