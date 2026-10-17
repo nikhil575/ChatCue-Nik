@@ -1,9 +1,48 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { ArrowUpRight, Chrome, Zap, Shield, Sparkles, Globe2 } from 'lucide-react';
-import { CHROME_STORE_URL, HERO_IMAGE } from '../constants';
+import { ArrowUpRight, Chrome, Zap, Shield, Sparkles, Globe2, Smartphone, Copy, Check } from 'lucide-react';
+import { CHROME_STORE_URL, HERO_IMAGE, PHONE_DASHBOARD_URL } from '../constants';
 import { ChatCueLogo } from './ChatCueLogo';
 import dashboardFull from '../../dashboard-full.webp';
+
+// Phones can't install Chrome extensions, so phone visitors get a way to move
+// to their computer, and Kick/Twitch streamers can start from the phone itself.
+export const PhoneNote: React.FC = () => {
+  const [copied, setCopied] = useState(false);
+  const copy = () => {
+    navigator.clipboard?.writeText(window.location.href).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }).catch(() => {});
+  };
+  return (
+    <div className="md:hidden rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-left text-sm text-neutral-300 space-y-2.5">
+      <div className="flex items-start gap-2.5">
+        <Smartphone className="w-4 h-4 mt-0.5 text-[#53FC18] shrink-0" />
+        <p>On your phone? The extension installs on a computer. Copy this link and open it on your PC.</p>
+      </div>
+      <div className="flex flex-wrap gap-2 pl-[26px]">
+        <button
+          type="button"
+          onClick={copy}
+          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-neutral-900 border border-neutral-700 text-xs font-semibold text-white"
+        >
+          {copied ? <Check className="w-3.5 h-3.5 text-[#53FC18]" /> : <Copy className="w-3.5 h-3.5" />}
+          <span>{copied ? 'Link copied' : 'Copy link'}</span>
+        </button>
+        <a
+          href={PHONE_DASHBOARD_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#53FC18]/40 text-xs font-semibold text-[#53FC18]"
+        >
+          <span>Kick or Twitch? Start on your phone</span>
+          <ArrowUpRight className="w-3.5 h-3.5" />
+        </a>
+      </div>
+    </div>
+  );
+};
 
 export const HeroSection: React.FC = () => {
   return (
@@ -52,7 +91,7 @@ export const HeroSection: React.FC = () => {
                   <path d="M4 3h4.8v5.6L14 3h5.6l-6.8 7.6 7.4 10.4h-5.8l-5.6-8.2V21H4V3z"/>
                 </svg>
               </div>
-              <span>Kick Pop-outs</span>
+              <span>Kick Chat</span>
             </div>
 
             {/* Twitch Badge with Cute Glitch Logo */}
@@ -80,7 +119,7 @@ export const HeroSection: React.FC = () => {
               <div className="w-5 h-5 rounded-lg bg-[#53FC18]/15 border border-[#53FC18]/30 flex items-center justify-center shrink-0 shadow-sm">
                 <Globe2 className="w-3.5 h-3.5 text-[#53FC18]" />
               </div>
-              <span>Global Slang AI</span>
+              <span>Any language</span>
             </div>
           </div>
 
@@ -111,16 +150,18 @@ export const HeroSection: React.FC = () => {
             </a>
           </motion.div>
 
+          <PhoneNote />
+
           {/* Trust Strip */}
           <div className="pt-4 border-t border-neutral-800/80 flex flex-wrap items-center justify-center gap-y-2 gap-x-6 text-xs text-neutral-400">
             <div className="flex items-center gap-1.5">
               <Shield className="w-3.5 h-3.5 text-[#53FC18]" />
               <span>Zero Setup · No API Keys</span>
             </div>
-            <span aria-hidden="true" className="text-neutral-700">|</span>
+            <span aria-hidden="true" className="hidden sm:inline text-neutral-700">|</span>
             <div className="flex items-center gap-1.5">
               <Globe2 className="w-3.5 h-3.5 text-[#53FC18]" />
-              <span>Worldwide Regional AI</span>
+              <span>Free, no account needed</span>
             </div>
           </div>
         </div>
@@ -134,7 +175,15 @@ export const HeroSection: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative"
           >
-            <div className="relative overflow-hidden rounded-2xl border border-[#53FC18]/30 bg-[#060D07] shadow-[0_0_60px_rgba(83,252,24,0.18)] origin-top transition-transform duration-700 ease-out lg:[transform:perspective(2200px)_rotateX(5deg)] lg:hover:[transform:perspective(2200px)_rotateX(0deg)]">
+            {/* Phones: the full dashboard is too small to read, so show the Chat wants now panel up close */}
+            <div className="sm:hidden relative overflow-hidden rounded-2xl border border-[#53FC18]/30 bg-[#060D07] shadow-[0_0_60px_rgba(83,252,24,0.18)] aspect-[0.98]">
+              <img
+                src={dashboardFull}
+                alt="ChatCue's Chat wants now panel: chat requests ranked by how many people ask"
+                className="absolute top-0 left-0 max-w-none w-[308%]"
+              />
+            </div>
+            <div className="hidden sm:block relative overflow-hidden rounded-2xl border border-[#53FC18]/30 bg-[#060D07] shadow-[0_0_60px_rgba(83,252,24,0.18)] origin-top transition-transform duration-700 ease-out lg:[transform:perspective(2200px)_rotateX(5deg)] lg:hover:[transform:perspective(2200px)_rotateX(0deg)]">
               <div className="flex items-center gap-2 border-b border-white/10 bg-black/40 px-4 py-2.5">
                 <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
                 <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" />
@@ -163,7 +212,7 @@ export const HeroSection: React.FC = () => {
                 </span>
               </div>
             </div>
-            <div className="mt-6 grid gap-3 sm:grid-cols-3">
+            <div className="mt-6 hidden sm:grid gap-3 sm:grid-cols-3">
               <div className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3">
                 <span className="flex h-6 w-6 flex-none items-center justify-center rounded-full bg-[#53FC18] text-[#060D07] text-xs font-extrabold">1</span>
                 <span className="text-sm text-neutral-200 leading-snug">Top requests, ranked by how many people ask</span>

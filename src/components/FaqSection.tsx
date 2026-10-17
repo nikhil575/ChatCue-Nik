@@ -10,12 +10,12 @@ const FAQS: FaqItem[] = [
   {
     question: 'Is ChatCue a global tool? Which languages and regions are supported?',
     answer:
-      'ChatCue is 100% global and supports all major languages and regional dialects, including Spanish (Spain & Latin America), Portuguese (Brazil & Portugal), English, French, German, Japanese, and Hinglish. It recognizes colloquial streamer slang, regional memes (e.g., "guacha", "farfadox", "SAJ", "xdd", "op clutch"), and Romanized text effortlessly.'
+      'Yes. ChatCue reads chat in Spanish (Spain and Latin America), Portuguese, English, Hinglish, French, German and more, including chats that mix languages. It understands streamer slang like "xdd", "guacha" and "op clutch", and romanized text.'
   },
   {
     question: 'How do "CHAT WANTS NOW" and "QUESTIONS" work on the dashboard?',
     answer:
-      'CHAT WANTS NOW detects audience sentiment and groups repeated viewer requests within 15 seconds, automatically dropping off after 3 minutes of inactivity. The QUESTIONS panel isolates questions asked in the last 3 minutes and gives you a one-click checkmark to mark them answered on stream.'
+      'CHAT WANTS NOW groups requests that several viewers repeat, usually within about 15 seconds, and drops them after 3 quiet minutes. The QUESTIONS panel keeps questions from the last 3 minutes, with a checkmark to mark each one answered on stream.'
   },
   {
     question: 'Does ChatCue cause frame drops or lag in OBS Studio or my game?',
@@ -26,6 +26,11 @@ const FAQS: FaqItem[] = [
     question: 'Do I need to enter stream keys, passwords, or developer API tokens?',
     answer:
       'Never. ChatCue requires zero API keys, no passwords, and no bot authorizations. You simply install the Chrome extension and keep your regular YouTube Live, Kick, or Twitch chat tab open.'
+  },
+  {
+    question: 'Can I use ChatCue from my phone, without a laptop?',
+    answer:
+      'On Kick and Twitch, yes. Open the ChatCue dashboard on your phone, sign in with Google and paste your channel link, and ChatCue reads your chat on its servers. YouTube still needs the Chrome extension on a computer.'
   },
   {
     question: 'How does the "FLAGGED" moderation box protect my stream?',
@@ -47,9 +52,9 @@ export const FaqSection: React.FC = () => {
   };
 
   return (
-    <section id="faq" className="py-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+    <section id="faq" className="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
       {/* Header */}
-      <div className="text-center mb-16">
+      <div className="text-center mb-12">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#53FC18]/10 border border-[#53FC18]/25 text-[#53FC18] text-xs font-semibold mb-4">
           <HelpCircle className="w-3.5 h-3.5" />
           <span>Streamer FAQ</span>
@@ -58,7 +63,7 @@ export const FaqSection: React.FC = () => {
           Frequently Asked Questions
         </h2>
         <p className="mt-4 text-base sm:text-lg text-neutral-400">
-          Everything you need to know about setting up ChatCue for your global live broadcasts.
+          Quick answers before your next stream.
         </p>
       </div>
 

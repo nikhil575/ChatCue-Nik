@@ -45,11 +45,11 @@ export const ObsOverlayShowcase: React.FC = () => {
           </div>
 
           <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-white tracking-tight text-balance">
-            Show Viewers Their Requests Matter on Stream
+            Show viewers their requests on stream
           </h2>
 
           <p className="text-sm sm:text-base text-neutral-300 leading-relaxed">
-            Generate a transparent Browser Source overlay that displays the Top 3 chat requests right on your stream screen. When viewers see their requests hit the stream HUD, engagement explodes.
+            Add a transparent Browser Source that shows your top 3 chat requests on stream. Viewers see their requests up there and know you&apos;re reading chat.
           </p>
 
           {/* Platform Toggle */}

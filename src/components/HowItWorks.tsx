@@ -41,7 +41,7 @@ export const HowItWorks: React.FC = () => {
   const rows = [...CHAT, ...CHAT];
 
   return (
-    <section id="how-it-works" className="relative py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section id="how-it-works" className="relative py-14 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <style>{'@keyframes cc-scroll{from{transform:translateY(0)}to{transform:translateY(-50%)}}' +
         '@keyframes cc-ring-a{from{transform:rotateX(72deg) rotateZ(0deg)}to{transform:rotateX(72deg) rotateZ(360deg)}}' +
         '@keyframes cc-ring-b{from{transform:rotateY(72deg) rotateZ(0deg)}to{transform:rotateY(72deg) rotateZ(360deg)}}' +

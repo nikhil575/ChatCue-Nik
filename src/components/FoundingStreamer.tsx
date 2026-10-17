@@ -1,10 +1,10 @@
 import React from 'react';
-import { ArrowUpRight, Chrome, Sparkles } from 'lucide-react';
-import { CHROME_STORE_URL } from '../constants';
+import { ArrowUpRight, Chrome, Sparkles, Instagram } from 'lucide-react';
+import { CHROME_STORE_URL, INSTAGRAM_URL, INSTAGRAM_HANDLE } from '../constants';
 
 export const FoundingStreamer: React.FC = () => {
   return (
-    <section id="founding" className="py-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto text-center">
+    <section id="founding" className="py-10 sm:py-14 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto text-center">
       <div className="bg-[#08120B] border border-[#53FC18]/25 rounded-2xl p-8 sm:p-12 shadow-[0_0_40px_rgba(83,252,24,0.06)] relative overflow-hidden">
         {/* Ambient subtle glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-[#53FC18]/10 rounded-full blur-[80px] pointer-events-none" />
@@ -20,10 +20,10 @@ export const FoundingStreamer: React.FC = () => {
           </h2>
 
           <p className="text-sm sm:text-base text-neutral-300 max-w-xl mx-auto leading-relaxed">
-            ChatCue is new. We&apos;re onboarding our first streamers and building it with their feedback, free.
+            ChatCue is new. We&apos;re onboarding our first streamers and building it with their feedback, free. Tell us what you want next.
           </p>
 
-          <div className="pt-2 flex justify-center">
+          <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
             <a
               href={CHROME_STORE_URL}
               target="_blank"
@@ -33,6 +33,15 @@ export const FoundingStreamer: React.FC = () => {
               <Chrome className="w-4 h-4 stroke-[2.5]" />
               <span>Add to Chrome (Free)</span>
               <ArrowUpRight className="w-4 h-4 stroke-[2.5]" />
+            </a>
+            <a
+              href={INSTAGRAM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-3 text-sm font-semibold text-neutral-200 hover:text-white bg-neutral-900/80 hover:bg-neutral-800 border border-neutral-800 hover:border-[#53FC18]/40 rounded-xl transition-all whitespace-nowrap"
+            >
+              <Instagram className="w-4 h-4 text-[#53FC18]" />
+              <span>DM us {INSTAGRAM_HANDLE}</span>
             </a>
           </div>
         </div>

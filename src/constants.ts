@@ -1,6 +1,12 @@
 export const CHROME_STORE_URL =
   'https://chromewebstore.google.com/detail/chatcue-live-chat-dashboa/eakblfdikackbpjdijhehlajjmaldpep';
 
+export const PRIVACY_URL = 'https://chatcue.nikhilpansheriya8.workers.dev/privacy';
+export const INSTAGRAM_URL = 'https://www.instagram.com/chatcue.si/';
+export const INSTAGRAM_HANDLE = '@chatcue.si';
+// Kick and Twitch streamers can sign in here from a phone and start without the extension.
+export const PHONE_DASHBOARD_URL = 'https://chatcue.nikhilpansheriya8.workers.dev/dashboard';
+
 export const APP_NAME = 'ChatCue';
 export const APP_TAGLINE = 'Live chat dashboard for YouTube, Kick & Twitch';
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { ShieldCheck, Sparkles, Chrome, ArrowUpRight } from 'lucide-react';
 import { ChatCueLogo } from './ChatCueLogo';
+import { PhoneNote } from './HeroSection';
 import { CHROME_STORE_URL } from '../constants';
 
 export const CtaBanner: React.FC = () => {
@@ -36,10 +37,12 @@ export const CtaBanner: React.FC = () => {
             </a>
           </div>
 
+          <PhoneNote />
+
           <div className="flex flex-wrap items-center justify-center gap-6 text-xs text-neutral-400 pt-3">
             <div className="flex items-center gap-1.5">
               <ShieldCheck className="w-4 h-4 text-[#53FC18]" />
-              <span>No registration required</span>
+              <span>No account needed</span>
             </div>
             <span aria-hidden="true" className="text-white/20">·</span>
             <div className="flex items-center gap-1.5">

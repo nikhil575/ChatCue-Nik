@@ -4,7 +4,6 @@ import { HeroSection } from './components/HeroSection';
 import { HowItWorks } from './components/HowItWorks';
 import { BentoFeatures } from './components/BentoFeatures';
 import { ObsOverlayShowcase } from './components/ObsOverlayShowcase';
-import { ChaosComparison } from './components/ChaosComparison';
 import { FoundingStreamer } from './components/FoundingStreamer';
 import { FaqSection } from './components/FaqSection';
 import { CtaBanner } from './components/CtaBanner';
@@ -27,7 +26,6 @@ export default function App() {
           <HowItWorks />
           <BentoFeatures />
           <ObsOverlayShowcase />
-          <ChaosComparison />
           <FoundingStreamer />
           <FaqSection />
           <CtaBanner />
