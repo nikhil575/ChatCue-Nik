@@ -96,7 +96,7 @@ export const ObsOverlayShowcase: React.FC = () => {
 
         {/* Right Column (7 cols): Live Visual OBS Canvas Simulation */}
         <div className="lg:col-span-7">
-          <div className="relative aspect-video rounded-2xl overflow-hidden border border-[#53FC18]/30 shadow-[0_0_40px_rgba(83,252,24,0.15)] bg-black">
+          <div className="relative aspect-[4/5] sm:aspect-video rounded-2xl overflow-hidden border border-[#53FC18]/30 shadow-[0_0_40px_rgba(83,252,24,0.15)] bg-black">
             {/* Streamer backdrop representing live broadcast game feed */}
             <img
               src={HERO_IMAGE}
@@ -109,7 +109,7 @@ export const ObsOverlayShowcase: React.FC = () => {
             <div className="absolute inset-0 bg-black/40" />
 
             {/* LIVE watermark in top-left */}
-            <div className="absolute top-4 left-4 flex items-center gap-2 bg-black/80 backdrop-blur-md px-3 py-1.5 rounded-lg border border-red-500/40">
+            <div className="absolute top-3 left-3 sm:top-4 sm:left-4 flex items-center gap-2 bg-black/80 backdrop-blur-md px-3 py-1.5 rounded-lg border border-red-500/40">
               <span className="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse" />
               <span className="text-xs font-bold text-white uppercase tracking-wider font-mono">
                 OBS STUDIO PREVIEW
@@ -118,7 +118,7 @@ export const ObsOverlayShowcase: React.FC = () => {
 
             {/* The Active OBS Browser Source Widget mounted on stream screen */}
             <div
-              className={`absolute top-6 right-6 max-w-xs w-full p-4 rounded-xl backdrop-blur-md border transition-all duration-300 ${activeStyle.border} ${activeStyle.shadow} bg-black/85`}
+              className={`absolute top-14 left-3 right-3 sm:left-auto sm:top-6 sm:right-6 sm:max-w-xs sm:w-full p-3 sm:p-4 rounded-xl backdrop-blur-md border transition-all duration-300 ${activeStyle.border} ${activeStyle.shadow} bg-black/85`}
             >
               <div className="flex items-center justify-between pb-2 mb-2 border-b border-neutral-800">
                 <div className="flex items-center gap-1.5">
@@ -160,7 +160,7 @@ export const ObsOverlayShowcase: React.FC = () => {
             </div>
 
             {/* Bottom info pill on OBS canvas */}
-            <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-[11px] text-neutral-400 bg-black/70 backdrop-blur-md px-3 py-1.5 rounded-lg border border-neutral-800">
+            <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 flex flex-wrap items-center justify-between gap-x-2 text-[10px] sm:text-[11px] text-neutral-400 bg-black/70 backdrop-blur-md px-3 py-1.5 rounded-lg border border-neutral-800">
               <span>Resolution: 1920x1080 · 60 FPS</span>
               <span className="text-[#53FC18] font-medium">ChatCue Browser Source Active</span>
             </div>

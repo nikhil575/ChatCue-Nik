@@ -46,7 +46,7 @@ export const PhoneNote: React.FC = () => {
 
 export const HeroSection: React.FC = () => {
   return (
-    <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
+    <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       {/* Background ambient neon glow aura */}
       <div className="absolute top-16 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-[#53FC18]/10 blur-[130px] rounded-full pointer-events-none" />
 
@@ -175,15 +175,7 @@ export const HeroSection: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative"
           >
-            {/* Phones: the full dashboard is too small to read, so show the Chat wants now panel up close */}
-            <div className="sm:hidden relative overflow-hidden rounded-2xl border border-[#53FC18]/30 bg-[#060D07] shadow-[0_0_60px_rgba(83,252,24,0.18)] aspect-[0.98]">
-              <img
-                src={dashboardFull}
-                alt="ChatCue's Chat wants now panel: chat requests ranked by how many people ask"
-                className="absolute top-0 left-0 max-w-none w-[308%]"
-              />
-            </div>
-            <div className="hidden sm:block relative overflow-hidden rounded-2xl border border-[#53FC18]/30 bg-[#060D07] shadow-[0_0_60px_rgba(83,252,24,0.18)] origin-top transition-transform duration-700 ease-out lg:[transform:perspective(2200px)_rotateX(5deg)] lg:hover:[transform:perspective(2200px)_rotateX(0deg)]">
+            <div className="relative overflow-hidden rounded-2xl border border-[#53FC18]/30 bg-[#060D07] shadow-[0_0_60px_rgba(83,252,24,0.18)] origin-top transition-transform duration-700 ease-out lg:[transform:perspective(2200px)_rotateX(5deg)] lg:hover:[transform:perspective(2200px)_rotateX(0deg)]">
               <div className="flex items-center gap-2 border-b border-white/10 bg-black/40 px-4 py-2.5">
                 <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
                 <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" />
@@ -212,7 +204,7 @@ export const HeroSection: React.FC = () => {
                 </span>
               </div>
             </div>
-            <div className="mt-6 hidden sm:grid gap-3 sm:grid-cols-3">
+            <div className="mt-6 grid gap-3 sm:grid-cols-3">
               <div className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3">
                 <span className="flex h-6 w-6 flex-none items-center justify-center rounded-full bg-[#53FC18] text-[#060D07] text-xs font-extrabold">1</span>
                 <span className="text-sm text-neutral-200 leading-snug">Top requests, ranked by how many people ask</span>
