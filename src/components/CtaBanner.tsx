@@ -1,7 +1,7 @@
 import React from 'react';
-import { ShieldCheck, Sparkles } from 'lucide-react';
+import { ShieldCheck, Sparkles, Chrome, ArrowUpRight } from 'lucide-react';
 import { ChatCueLogo } from './ChatCueLogo';
-import { MainCtaButton } from './MainCtaButton';
+import { CHROME_STORE_URL } from '../constants';
 
 export const CtaBanner: React.FC = () => {
   return (
@@ -24,7 +24,16 @@ export const CtaBanner: React.FC = () => {
           </p>
 
           <div className="pt-2 flex justify-center">
-            <MainCtaButton size="lg" />
+            <a
+              href={CHROME_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-3 px-8 py-4 text-lg font-extrabold text-black bg-[#53FC18] hover:bg-[#70FF3F] rounded-xl transition-all duration-200 shadow-[0_0_30px_rgba(83,252,24,0.4)] hover:shadow-[0_0_40px_rgba(83,252,24,0.65)] hover:scale-[1.02] active:scale-[0.98] whitespace-nowrap"
+            >
+              <Chrome className="w-5 h-5 stroke-[2.5]" />
+              <span>Add to Chrome, it's free</span>
+              <ArrowUpRight className="w-4 h-4 stroke-[2.5]" />
+            </a>
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-6 text-xs text-neutral-400 pt-3">
